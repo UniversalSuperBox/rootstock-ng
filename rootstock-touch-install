@@ -234,7 +234,7 @@ do_shell "mkdir -p /data/recovery/system/android/firmware"
 do_shell "mkdir -p /data/recovery/system/android/persist"
 do_shell "mkdir -p /data/recovery/system/userdata"
 do_shell "[ -e /data/recovery/system/SWAP.swap ] && mv /data/recovery/system/SWAP.swap /data/SWAP.img || exit 0"
-for link in cache data factory firmware persist system; do
+for link in cache factory firmware persist system; do
     # We really don't care if this fails, so || true it is!
 	do_shell "cd /data/recovery/system && ln -s /android/$link $link" || true
 done || true
