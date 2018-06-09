@@ -92,7 +92,7 @@ prepare_ubuntu_system()
 	do_shell "mount -t ext4 -o loop /data/ubuntu.img /data/recovery/system/"
 
 	# system.img is the deprecated name, but we make link to ubuntu.img
-	do_shell "ln /data/ubuntu.img /data/system.img"
+#	do_shell "ln /data/ubuntu.img /data/system.img"
 }
 
 cleanup()
@@ -278,6 +278,7 @@ cleanup_device
 echo "[done]"
 
 echo "rebooting device"
-adb reboot
+do_shell "sync"
+#adb reboot
 
 echo "Installation is complete."
